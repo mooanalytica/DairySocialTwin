@@ -1,0 +1,3 @@
+video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-8.mp4,Interaction-8.mp4,Grooming/Interaction-8.mp4,0,1,Daisy,1260.00,214.00,1320.00,1576.00,2580.00,1790.00,0.952148,detector
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-8.mp4,Interaction-8.mp4,Grooming/Interaction-8.mp4,0,2,Bella,446.00,206.00,955.00,1928.00,1401.00,2134.00,0.941406,detector

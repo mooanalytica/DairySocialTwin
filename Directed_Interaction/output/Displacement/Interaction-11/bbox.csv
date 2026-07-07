@@ -1,0 +1,4 @@
+video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Displacement\Interaction-11.mp4,Interaction-11.mp4,Displacement/Interaction-11.mp4,0,1,NO NAME,1.50,239.75,706.00,862.25,707.50,1102.00,0.909668,detector
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Displacement\Interaction-11.mp4,Interaction-11.mp4,Displacement/Interaction-11.mp4,0,2,Rosie,2260.00,1290.00,1480.00,842.00,3740.00,2132.00,0.552734,detector
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Displacement\Interaction-11.mp4,Interaction-11.mp4,Displacement/Interaction-11.mp4,0,3,Bella,2598.00,10.00,1084.00,1434.00,3682.00,1444.00,0.517578,detector

@@ -1,0 +1,4 @@
+video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Headbutting\Interaction-62.mp4,Interaction-62.mp4,Headbutting/Interaction-62.mp4,0,1,Daisy,1412.00,964.00,2424.00,1086.00,3836.00,2050.00,0.953125,detector
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Headbutting\Interaction-62.mp4,Interaction-62.mp4,Headbutting/Interaction-62.mp4,0,2,Bella,0.00,1030.00,1689.00,696.00,1689.00,1726.00,0.919434,detector
+F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Headbutting\Interaction-62.mp4,Interaction-62.mp4,Headbutting/Interaction-62.mp4,0,3,NO NAME,462.00,2.00,860.00,461.50,1322.00,463.50,0.848145,detector

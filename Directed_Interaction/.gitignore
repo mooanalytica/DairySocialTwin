@@ -1,0 +1,9 @@
+__pycache__/
+.ultralytics/
+logs/
+*.log
+*.pt
+*.pth
+*.zip
+bbox_for_1st_frame/
+output/**/vis.png
