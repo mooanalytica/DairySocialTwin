@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interaction Annotator</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="clip-panel">
+        <div class="panel-top">
+          <strong>Clips</strong>
+          <span id="clip-count">0</span>
+        </div>
+        <div id="clip-list" class="clip-list"></div>
+      </aside>
+
+      <main class="review-panel">
+        <div class="toolbar">
+          <button id="add-box">Add ROI</button>
+          <button id="delete-box">Delete ROI</button>
+          <button id="clear-boxes">Clear</button>
+          <button id="save">Save</button>
+          <button id="delete-clip" class="danger">Delete Clip</button>
+        </div>
+
+        <div class="video-stage" id="video-stage">
+          <video id="video" playsinline muted loop></video>
+          <canvas id="overlay"></canvas>
+        </div>
+
+        <div class="timeline">
+          <div class="transport">
+            <button id="play-pause">Pause</button>
+            <button id="replay">Replay</button>
+            <span id="time-label">0.000 / 0.000</span>
+          </div>
+          <input id="seek" type="range" min="0" max="0" step="1" value="0" />
+          <div class="bounds">
+            <label>Start <input id="start-frame" type="range" min="0" max="0" step="1" value="0" /></label>
+            <label>End <input id="end-frame" type="range" min="0" max="0" step="1" value="0" /></label>
+          </div>
+        </div>
+      </main>
+
+      <aside class="roi-panel">
+        <div class="panel-top">
+          <strong>ROI</strong>
+          <span id="save-state">Idle</span>
+        </div>
+        <div class="field">
+          <label for="valence">Valence</label>
+          <select id="valence">
+            <option value="friendly">friendly</option>
+            <option value="unfriendly">unfriendly</option>
+            <option value="fake_interaction">fake_interaction</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fine-class">Fine class</label>
+          <select id="fine-class">
+            <option value=""></option>
+            <option value="Displacement">Displacement</option>
+            <option value="Grooming">Grooming</option>
+            <option value="Headbutting">Headbutting</option>
+            <option value="Licking">Licking</option>
+          </select>
+        </div>
+        <div id="box-list" class="box-list"></div>
+      </aside>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
