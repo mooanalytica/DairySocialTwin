@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+run_logs/
+output_s2/
+models_new/*_split.csv
+models_new/stage2_cascade_val_*.csv
+stage2_index/stage2_index_build_summary.json
+stage2_index/stage2_split_summary.csv
