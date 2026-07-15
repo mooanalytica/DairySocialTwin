@@ -10,7 +10,7 @@ It scans interaction videos, prepares detector-based initial boxes, lets the ann
 - `output/**/bbox.csv`: retained text annotation files.
 - `output/**/metadata.json`: retained text metadata files for the annotations.
 
-Large model weights, logs, cache files, generated visualizations, and intermediate export folders are intentionally not included in the cleaned repository.
+Large model weights, logs, cache files, generated visualizations, and intermediate export folders are intentionally not included in the cleaned repository. 
 
 ## Required Local Files
 
