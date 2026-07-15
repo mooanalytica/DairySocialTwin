@@ -1,4 +1,0 @@
-video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Licking\Interaction-70.mp4,Interaction-70.mp4,Licking/Interaction-70.mp4,0,1,Bella,552.00,23.00,1500.00,1810.00,2052.00,1833.00,0.956543,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Licking\Interaction-70.mp4,Interaction-70.mp4,Licking/Interaction-70.mp4,0,2,Daisy,1168.00,688.00,2652.00,1354.00,3820.00,2042.00,0.915039,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Licking\Interaction-70.mp4,Interaction-70.mp4,Licking/Interaction-70.mp4,0,3,NO NAME,142.00,1.50,1238.00,514.50,1380.00,516.00,0.873047,detector

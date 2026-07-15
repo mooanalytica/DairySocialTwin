@@ -1,3 +1,0 @@
-video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Headbutting\Interaction-26.mp4,Interaction-26.mp4,Headbutting/Interaction-26.mp4,0,1,Bella,1787.00,764.00,1977.00,1360.00,3764.00,2124.00,0.950195,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Headbutting\Interaction-26.mp4,Interaction-26.mp4,Headbutting/Interaction-26.mp4,0,2,Daisy,860.50,0.50,1899.50,860.50,2760.00,861.00,0.875977,detector

@@ -1,3 +1,0 @@
-video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Displacement\Interaction-56.mp4,Interaction-56.mp4,Displacement/Interaction-56.mp4,0,1,Buttercup,806.50,130.00,1791.50,1218.00,2598.00,1348.00,0.944824,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Displacement\Interaction-56.mp4,Interaction-56.mp4,Displacement/Interaction-56.mp4,0,2,Marigold,2548.00,386.50,1232.00,1651.50,3780.00,2038.00,0.935547,detector

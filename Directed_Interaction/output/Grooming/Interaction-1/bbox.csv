@@ -1,6 +1,0 @@
-video,file_name,relative_video,frame,bbox_id,cow_name,x,y,w,h,x2,y2,score,source
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-1.mp4,Interaction-1.mp4,Grooming/Interaction-1.mp4,0,1,Marigold,1268.00,180.00,2076.00,1542.00,3344.00,1722.00,0.947754,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-1.mp4,Interaction-1.mp4,Grooming/Interaction-1.mp4,0,2,Buttercup,2.00,169.00,1328.00,838.00,1330.00,1007.00,0.919434,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-1.mp4,Interaction-1.mp4,Grooming/Interaction-1.mp4,0,3,NO NAME,1837.00,2.00,1231.00,1007.00,3068.00,1009.00,0.891602,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-1.mp4,Interaction-1.mp4,Grooming/Interaction-1.mp4,0,4,NO NAME,2.75,1172.00,416.00,964.00,418.75,2136.00,0.874023,detector
-F:\DROPBOX\Isolated_Interaction_Clips\Interaction_Type\Grooming\Interaction-1.mp4,Interaction-1.mp4,Grooming/Interaction-1.mp4,0,5,NO NAME,2608.00,2.88,448.00,170.12,3056.00,173.00,0.663574,detector
