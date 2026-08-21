@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dairy Floor Plan</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side">
+        <header class="brand">
+          <div>
+            <h1 id="titleLine">Dairy Floor Plan</h1>
+            <p id="sourceLine">loading</p>
+          </div>
+        </header>
+
+        <section class="panel">
+          <h2>Sample</h2>
+          <label class="select-field">
+            <span>Farm</span>
+            <select id="farmSelect"></select>
+          </label>
+          <label class="select-field">
+            <span>Camera</span>
+            <select id="cameraSelect"></select>
+          </label>
+          <label class="select-field">
+            <span>Clip</span>
+            <select id="sampleSelect"></select>
+          </label>
+          <div class="rotation-stack">
+            <div class="rotation-row">
+              <span class="rotation-label">MAP</span>
+              <div class="rotation-controls">
+                <button id="rotateLeftBtn" title="Rotate cattle points left 90 degrees">L90</button>
+                <output id="rotationValue">0 deg</output>
+                <button id="rotateRightBtn" title="Rotate cattle points right 90 degrees">R90</button>
+              </div>
+            </div>
+            <div class="rotation-row">
+              <span class="rotation-label">Plan</span>
+              <div class="rotation-controls">
+                <button id="planRotateLeftBtn" title="Rotate floorplan semantics left 90 degrees">L90</button>
+                <output id="planRotationValue">0 deg</output>
+                <button id="planRotateRightBtn" title="Rotate floorplan semantics right 90 degrees">R90</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Frame</h2>
+          <div class="metric-grid">
+            <div><span id="frameValue">0</span><small>current</small></div>
+            <div><span id="pointValue">0</span><small>cattle</small></div>
+            <div><span id="trackValue">0</span><small>tracks</small></div>
+            <div><span id="movedValue">0</span><small>adjusted</small></div>
+            <div><span id="interactionValue">0</span><small>links</small></div>
+            <div><span id="blockedValue">0</span><small>blocked</small></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Layers</h2>
+          <label><input id="baseToggle" type="checkbox" checked /> 2D base</label>
+          <label><input id="referenceToggle" type="checkbox" /> reference areas</label>
+          <label><input id="resourceFloorplanToggle" type="checkbox" /> resource floorplan</label>
+          <label><input id="trailToggle" type="checkbox" checked /> trails</label>
+          <label><input id="correctionToggle" type="checkbox" checked /> corrections</label>
+          <label><input id="interactionToggle" type="checkbox" checked /> interactions</label>
+        </section>
+
+        <section class="panel">
+          <h2>Cattle</h2>
+          <label class="range-field">
+            <span>Size</span>
+            <input id="cattleScaleRange" type="range" min="0.5" max="5" step="0.1" value="3" />
+            <output id="cattleScaleValue">3.0x</output>
+          </label>
+        </section>
+
+        <section class="panel">
+          <h2>Tracks</h2>
+          <div id="trackLegend" class="track-legend"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Status</h2>
+          <p id="statusLine">Preparing floor plan</p>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <div class="toolbar">
+          <button id="playBtn" title="Play or pause">Pause</button>
+          <button id="stepBackBtn" title="Previous frame">-1</button>
+          <button id="stepForwardBtn" title="Next frame">+1</button>
+          <label class="zoom-control">
+            <span>Zoom</span>
+            <input id="zoomRange" type="range" min="17" max="160" value="17" />
+          </label>
+          <div class="video-tools">
+            <label class="video-control" title="Show visualization video">
+              <input id="videoToggle" type="checkbox" disabled />
+              <span>Video</span>
+            </label>
+            <button id="uiRotateLeftBtn" class="ui-rotate-button" title="Rotate UI display left 90 degrees">
+              UI L90
+            </button>
+            <output id="uiRotationValue" class="ui-rotation-value">0 deg</output>
+            <button id="uiRotateRightBtn" class="ui-rotate-button" title="Rotate UI display right 90 degrees">
+              UI R90
+            </button>
+            <label class="warp-control" title="Use display-only semantic polygon mapping">
+              <input id="semanticWarpToggle" type="checkbox" />
+              <span>Warp</span>
+            </label>
+            <button id="loadBtn" class="load-button" title="Load selected trajectory and track-ID video">Load</button>
+          </div>
+          <span class="fill"></span>
+          <span id="zoomLabel">100%</span>
+        </div>
+
+        <div id="splitWorkspace" class="split-workspace">
+          <div id="stage" class="stage">
+            <div id="canvasFrame" class="canvas-frame">
+              <canvas id="canvas"></canvas>
+            </div>
+          </div>
+          <div id="splitHandle" class="split-handle" hidden></div>
+          <div id="videoPane" class="video-pane" hidden>
+            <video id="visualVideo" muted playsinline loop preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <input id="frameRange" type="range" min="0" max="0" value="0" />
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

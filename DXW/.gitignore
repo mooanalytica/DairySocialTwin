@@ -1,0 +1,27 @@
+# Private data staged for transfer to the internal Dropbox.
+MOVE_IT/
+
+# Restricted runtime data and processed results.
+WebUIL/sna_inputs/
+WebUIL/sna_outputs/
+WebUIL/sna_tf_outputs/
+WebUIL/stage2_clip_val_all_bbox_paths_by_category.csv
+WebUIL/rotation_settings.json
+
+# Runtime caches and generated process state.
+**/.cache/
+**/logs/
+**/__pycache__/
+**/.pytest_cache/
+**/*.py[cod]
+**/*.log
+**/*.pid
+
+# Local analysis configuration derived from the private full configuration.
+WebUIL/sna_config_tuned.yaml
+
+# Common editor and operating-system metadata.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

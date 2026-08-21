@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Dairy Social Network Dashboard</title>
+    <link rel="stylesheet" href="/static/app.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard controls">
+        <header class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <p class="brand-kicker">Dairy research</p>
+            <h1>Social Network<br>Dashboard</h1>
+          </div>
+        </header>
+
+        <section class="context-panel" aria-labelledby="context-title">
+          <div class="section-heading">
+            <span class="section-index">01</span>
+            <h2 id="context-title">Analysis scope</h2>
+          </div>
+          <div class="scope-grid">
+            <label class="field">
+              <span>Farm</span>
+              <select id="farmSelect" disabled>
+                <option>1</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Camera</span>
+              <select id="cameraSelect" disabled>
+                <option>1</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Segment</span>
+              <select id="segmentSelect" disabled>
+                <option>1</option>
+              </select>
+            </label>
+            <label class="field field-wide">
+              <span>Figure</span>
+              <select id="figureSelect" disabled aria-label="Select figure"></select>
+            </label>
+          </div>
+        </section>
+
+        <section id="cattlePanel" class="cattle-panel" aria-labelledby="cattle-title">
+          <div class="section-heading section-heading-row">
+            <div class="section-heading-label">
+              <span class="section-index">02</span>
+              <h2 id="cattle-title">Dairy cattle</h2>
+            </div>
+            <div class="cattle-heading-actions">
+              <span id="selectedCount" class="selection-count">0 / 62</span>
+              <button
+                id="mobileCattleToggle"
+                class="mobile-cattle-toggle"
+                type="button"
+                aria-controls="cattlePanel"
+                aria-expanded="true"
+              >
+                Hide
+              </button>
+            </div>
+          </div>
+
+          <p id="cattleModeNote" class="mode-note">
+            Choose cattle to include in this figure.
+          </p>
+
+          <label class="search-field" for="cattleSearch">
+            <span class="sr-only">Search cattle IDs</span>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input
+              id="cattleSearch"
+              type="search"
+              autocomplete="off"
+              placeholder="Find cattle ID"
+              disabled
+            >
+          </label>
+
+          <div class="selection-actions" role="group" aria-label="Cattle selection actions">
+            <button id="selectAllButton" type="button" disabled>Select all</button>
+            <button id="clearButton" type="button" disabled>Clear</button>
+            <button id="resetButton" type="button" class="accent-button" disabled>Reset</button>
+          </div>
+
+          <div
+            id="cattleList"
+            class="cattle-list"
+            role="group"
+            aria-label="Cattle IDs"
+            aria-busy="true"
+          ></div>
+        </section>
+
+        <footer class="sidebar-footer">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <strong id="datasetStatus">Loading result contract…</strong>
+            <span id="generationStatus">Waiting for server</span>
+          </div>
+        </footer>
+      </aside>
+
+      <main class="main-content">
+        <header class="main-header">
+          <div>
+            <p id="figureEyebrow" class="eyebrow">SNA results · Farm 1 / Camera 1</p>
+            <h2 id="figureHeading">Preparing dashboard</h2>
+            <p id="figureDescription" class="figure-description">
+              Loading the precomputed social network analysis results.
+            </p>
+          </div>
+          <div class="header-metrics" aria-label="Current figure summary">
+            <div class="metric">
+              <span>Sample</span>
+              <strong id="sampleMetric">—</strong>
+            </div>
+            <div class="metric">
+              <span>Selected</span>
+              <strong id="selectedMetric">—</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="figure-card" aria-labelledby="figureHeading">
+          <div class="figure-toolbar">
+            <div id="renderStatus" class="render-status" aria-live="polite">
+              Connecting to the local result server…
+            </div>
+            <a
+              id="openImageLink"
+              class="open-image-link is-disabled"
+              target="_blank"
+              rel="noopener"
+              aria-disabled="true"
+            >
+              Open full resolution
+            </a>
+          </div>
+
+          <div id="figureViewport" class="figure-viewport" aria-busy="true">
+            <img id="figureImage" alt="" aria-describedby="figureA11ySummary" hidden>
+            <p id="figureA11ySummary" class="sr-only">
+              The selected figure will appear here.
+            </p>
+
+            <div id="loadingState" class="viewport-state loading-state">
+              <span class="loading-orbit" aria-hidden="true"></span>
+              <strong id="loadingTitle">Loading dashboard data</strong>
+              <span id="loadingDetail">Validating the precomputed result contract</span>
+            </div>
+
+            <div
+              id="errorState"
+              class="viewport-state error-state"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            >
+              <span class="error-symbol" aria-hidden="true">!</span>
+              <strong>Unable to display this figure</strong>
+              <p id="errorMessage"></p>
+              <button id="retryButton" type="button">Retry</button>
+            </div>
+          </div>
+        </section>
+
+        <footer class="main-footer">
+          <span>Precomputed result view</span>
+          <span>No social network analysis is recomputed by this dashboard.</span>
+        </footer>
+      </main>
+    </div>
+
+    <div
+      id="cowInfoCard"
+      class="cow-info-card"
+      role="group"
+      aria-label="Dairy cattle information"
+      aria-live="polite"
+      aria-atomic="true"
+      hidden
+    >
+      <div class="cow-info-header">
+        <strong id="cowInfoId" class="cow-info-id"></strong>
+        <button
+          id="cowInfoClose"
+          class="cow-info-close"
+          type="button"
+          aria-label="Close cattle information"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="cow-info-photo-frame">
+        <img
+          id="cowInfoPhoto"
+          class="cow-info-photo"
+          width="640"
+          height="360"
+          alt=""
+        >
+      </div>
+      <ul
+        id="cowInfoAppearances"
+        class="cow-info-appearances"
+        aria-label="Appearance periods"
+      ></ul>
+    </div>
+  </body>
+</html>

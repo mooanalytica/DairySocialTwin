@@ -1,0 +1,65 @@
+metadata:
+  cow_id_scope: null
+  cross_sample_identity_alignment: false
+  opportunity_definition: "simultaneously_visible_and_opportunity_eligible"
+  community_window_policy: "adjustable"
+  community_window_note: "Set community.window_s and community.step_s to fixed research values when specified."
+
+analysis:
+  farm: "1"
+  camera: "Gopro1"
+  clip: null
+  start_time_s: null
+  end_time_s: null
+
+time:
+  fps: null
+  default_dt_s: null
+
+network:
+  directed: false
+  use_probability_weights: true
+  use_track_confidence: true
+  use_interaction_confidence: true
+  pair_zone_mode: "same_or_cross"
+  zone_level: "zone_type"
+  complete_pair_grid_from_trajectories: false
+  min_opportunity_s: 5.0
+  min_visible_time_s: 60.0
+  eps: 1.0e-9
+
+zones:
+  smoothing_s: 1.0
+  unknown_policy: "exclude_from_zone_metrics"
+  outside_zone: "path"
+
+community:
+  enabled: true
+  window_s: 300.0
+  step_s: 300.0
+  min_edges_per_window: 1
+  algorithm: "louvain_or_greedy"
+
+isolation:
+  alone_definition: "same_zone"
+  weights:
+    alone_fraction: 0.4
+    low_friendly_sociality: 0.3
+    low_partner_diversity: 0.3
+
+report:
+  time_bin_s: 60.0
+  edge_top_n: 20
+  network_layout: "spring"
+  layout_random_seed: 123
+
+events:
+  enabled: true
+  event_start_threshold: 0.5
+  event_end_threshold: 0.3
+  max_gap_s: 1.0
+  min_event_duration_s: 2.0
+
+outputs:
+  write_adjacency_matrices: true
+  write_plots: true
