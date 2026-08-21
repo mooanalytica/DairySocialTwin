@@ -1,0 +1,11 @@
+{
+  "name": "sna-zone-annotator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test:ui": "node tests/test_app_sna_ui.cjs"
+  },
+  "devDependencies": {
+    "playwright": ">=1.48.0 <2.0.0"
+  }
+}

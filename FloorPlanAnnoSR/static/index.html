@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SNA Zone Annotator</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <h1>SNA Zone Annotator</h1>
+            <p id="frameMeta">loading</p>
+            <select id="groupSelect" class="group-select" aria-label="Farm and camera group"></select>
+          </div>
+        </div>
+
+        <section class="panel zone-editor">
+          <h2>Zone</h2>
+          <label>
+            <span>Type slug</span>
+            <input id="zoneTypeInput" type="text" autocomplete="off" spellcheck="false" value="resource_area" />
+          </label>
+          <label>
+            <span>Label</span>
+            <input id="zoneLabelInput" type="text" autocomplete="off" placeholder="Optional display label" />
+          </label>
+          <label>
+            <span>Color</span>
+            <input id="zoneColorInput" type="color" value="#0b7285" />
+          </label>
+          <p class="zone-id-line">ID: <span id="zoneIdPreview">zone</span></p>
+          <div class="zone-actions">
+            <button id="newZoneBtn" title="Start a new zone form">New</button>
+            <button id="applyZoneBtn" title="Apply form values to selected zone">Update</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Zones</h2>
+          <div id="zoneList" class="zone-list"></div>
+        </section>
+
+        <section class="panel paths">
+          <h2>Output</h2>
+          <p id="saveStatus">Not saved yet</p>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <div class="toolbar">
+          <button id="undoPointBtn" title="Undo last point or polygon">Undo</button>
+          <button id="closePolygonBtn" title="Close current polygon">Close</button>
+          <button id="cancelPolygonBtn" title="Cancel current polygon">Cancel</button>
+          <button id="deleteZoneBtn" title="Delete selected zone">Delete</button>
+          <button id="clearAllBtn" title="Clear all zones in this group">Clear All</button>
+          <span class="toolbar-separator"></span>
+          <button id="zoomOutBtn" title="Zoom out">-</button>
+          <button id="fitBtn" title="Fit image">Fit</button>
+          <button id="zoomInBtn" title="Zoom in">+</button>
+          <span id="zoomLabel" class="zoom-label">100%</span>
+          <span class="toolbar-fill"></span>
+          <button id="saveBtn" class="primary" title="Save annotation">Save</button>
+        </div>
+
+        <div id="missingFrame" class="missing-frame" hidden>
+          <strong>reference_frame.png missing</strong>
+          <span>Check <code>/home/hyw/FloorPlanAnnoEN/output15</code></span>
+        </div>
+
+        <div id="stageShell" class="stage-shell">
+          <canvas id="canvas"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="switchDialog" class="switch-dialog" aria-labelledby="switchDialogTitle">
+      <h2 id="switchDialogTitle">Unsaved changes</h2>
+      <p>
+        Save changes before switching to
+        <strong id="switchTargetLabel">the selected group</strong>?
+      </p>
+      <p id="switchDialogStatus" class="switch-dialog-status" role="status"></p>
+      <div class="switch-dialog-actions">
+        <button id="switchCancelBtn" type="button">Cancel</button>
+        <button id="switchDiscardBtn" type="button">Discard</button>
+        <button id="switchSaveBtn" type="button" class="primary">Save &amp; Switch</button>
+      </div>
+    </dialog>
+
+    <script src="/static/app_sna.js"></script>
+  </body>
+</html>
