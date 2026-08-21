@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FloorPlanAnno</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <h1>FloorPlanAnno</h1>
+            <p id="frameMeta">loading</p>
+            <select id="groupSelect" class="group-select" aria-label="Floorplan group"></select>
+          </div>
+        </div>
+
+        <section class="panel">
+          <h2>Layers</h2>
+          <div id="classButtons" class="class-buttons"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Polygons</h2>
+          <div id="polygonList" class="polygon-list"></div>
+        </section>
+
+        <section class="panel paths">
+          <h2>Output</h2>
+          <p id="saveStatus">Not saved yet</p>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <div class="toolbar">
+          <button id="undoPointBtn" title="Undo last point or polygon">Undo</button>
+          <button id="closePolygonBtn" title="Close current polygon">Close</button>
+          <button id="cancelPolygonBtn" title="Cancel current polygon">Cancel</button>
+          <button id="deletePolygonBtn" title="Delete selected polygon">Delete</button>
+          <button id="clearLayerBtn" title="Clear active layer">Clear Layer</button>
+          <button id="defaultBlueBtn" title="Treat every unannotated pixel as blue ground">Blank=Blue</button>
+          <span class="toolbar-separator"></span>
+          <button id="zoomOutBtn" title="Zoom out">-</button>
+          <button id="fitBtn" title="Fit image">Fit</button>
+          <button id="zoomInBtn" title="Zoom in">+</button>
+          <span id="zoomLabel" class="zoom-label">100%</span>
+          <span class="toolbar-fill"></span>
+          <button id="saveBtn" class="primary" title="Save annotation">Save</button>
+        </div>
+
+        <div id="missingFrame" class="missing-frame" hidden>
+          <strong>reference_frame.png missing</strong>
+          <span>Run <code>python tools/setup_output15.py</code></span>
+        </div>
+
+        <div id="stageShell" class="stage-shell">
+          <canvas id="canvas"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

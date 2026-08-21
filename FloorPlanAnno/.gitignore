@@ -1,0 +1,34 @@
+# Restricted and transferred project assets
+/output15/
+/outputs/
+/MOVE_IT/
+
+# Source videos and trained models
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.avi
+*.AVI
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Python runtime artifacts and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and local configuration
+*.log
+logs/
+.env
+.env.*
+
+# Editor and operating-system metadata
+.idea/
+.vscode/
+.DS_Store
