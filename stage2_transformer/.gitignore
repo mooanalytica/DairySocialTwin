@@ -1,0 +1,40 @@
+# Local coding-agent metadata
+.agents/
+.codex/
+agents_r.md
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Restricted or generated project assets
+MOVE_IT/
+models_new/
+stage2_index/
+logs/
+run_logs/
+output/
+output_s2/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+*.log
+
+# Restricted video and Stage 1/Stage 2 data products
+*.mp4
+*.MP4
+*.avi
+*.mov
+**/tracking_boxes.csv
+**/keypoints.csv
+**/manifest.json
+**/selected_id*.csv
+**/interactions.csv
+**/no_interactions.csv
+**/adjacency_*.csv
+**/proximity_percentiles.csv
