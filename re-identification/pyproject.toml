@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cowtrack"
+version = "0.1.0"
+description = "Offline anonymous cattle tracking pipeline"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "opencv-python-headless>=4.10",
+  "pyarrow>=19",
+  "PyYAML>=6.0",
+  "joblib>=1.5",
+  "scikit-learn>=1.9",
+  "scipy==1.18.0",
+  "tqdm>=4.67",
+  "xxhash>=3.5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+appearance = [
+  "torch>=2.13",
+  "torchvision>=0.28",
+  "timm>=1.0.28",
+  "Pillow>=12",
+  "safetensors>=0.8",
+]
+
+[project.scripts]
+cowtrack = "cowtrack.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
