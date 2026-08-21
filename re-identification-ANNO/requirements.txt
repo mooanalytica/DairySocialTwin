@@ -1,0 +1,4 @@
+# Direct third-party Python imports in this repository.
+# The internal cowtrack package is supplied by /home/hyw/re-identification-S6/src.
+numpy
+opencv-python-headless

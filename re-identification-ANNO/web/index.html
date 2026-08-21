@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Re-identification QC</title>
+    <link rel="stylesheet" href="/web/styles.css">
+    <script src="/web/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Dairy cow re-identification</p>
+        <h1>Occurrence review</h1>
+      </div>
+      <div class="review-progress" aria-live="polite">
+        <span id="reviewCount">Loading occurrences…</span>
+        <div
+          id="completionTrack"
+          class="completion-track"
+          role="progressbar"
+          aria-label="Review completion"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span id="completionBar"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-shell" aria-busy="true">
+      <aside class="panel occurrence-panel" aria-labelledby="occurrenceHeading">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Queue</p>
+            <h2 id="occurrenceHeading">Occurrence clips</h2>
+          </div>
+          <span id="pendingCount" class="count-pill">— pending</span>
+        </div>
+        <div id="occurrenceList" class="occurrence-list" role="listbox" aria-label="Occurrence clips">
+          <p class="empty-message">Loading…</p>
+        </div>
+      </aside>
+
+      <section class="panel video-panel" aria-labelledby="videoHeading">
+        <div class="video-heading">
+          <div>
+            <p class="panel-kicker">Selected clip</p>
+            <h2 id="videoHeading">No occurrence selected</h2>
+          </div>
+          <span id="videoStatus" class="status-badge">Waiting</span>
+        </div>
+
+        <div class="video-stage">
+          <video
+            id="reviewVideo"
+            muted
+            loop
+            autoplay
+            playsinline
+            preload="metadata"
+            aria-label="Selected occurrence review clip"
+          ></video>
+          <div id="videoMessage" class="video-message" role="status">
+            Select an occurrence to load its clip.
+          </div>
+        </div>
+
+        <div class="video-controls">
+          <button id="playPauseButton" class="control-button" type="button" disabled>
+            Play
+          </button>
+          <label class="sr-only" for="videoProgress">Clip progress</label>
+          <input
+            id="videoProgress"
+            class="video-progress"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0"
+            disabled
+          >
+          <output id="timeDisplay" class="time-display" for="videoProgress">0:00 / 0:00</output>
+        </div>
+        <p class="shortcut-hint">Space: play/pause · ↑/↓: previous/next · A: accept · I: invalid · U: update ID</p>
+      </section>
+
+      <aside class="panel review-panel" aria-labelledby="reviewHeading">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Decision</p>
+            <h2 id="reviewHeading">Review occurrence</h2>
+          </div>
+          <span id="decisionStatus" class="status-badge">Pending</span>
+        </div>
+
+        <dl id="occurrenceDetails" class="occurrence-details">
+          <div><dt>Occurrence</dt><dd id="detailOccurrence">—</dd></div>
+          <div><dt>Original ID</dt><dd id="detailGid">—</dd></div>
+          <div><dt>Source clip</dt><dd id="detailClip">—</dd></div>
+          <div><dt>Legacy track</dt><dd id="detailTrack">—</dd></div>
+          <div><dt>Frames</dt><dd id="detailFrames">—</dd></div>
+          <div><dt>Duration</dt><dd id="detailDuration">—</dd></div>
+        </dl>
+
+        <div id="currentReview" class="current-review" aria-live="polite">
+          This occurrence has not been reviewed.
+        </div>
+
+        <div class="review-actions" aria-label="Review actions">
+          <button id="acceptButton" class="review-button accept" type="button" disabled>
+            <span>Accept</span>
+            <small>Keep the original global ID</small>
+          </button>
+
+          <button id="invalidButton" class="review-button invalid" type="button" disabled>
+            <span>Invalid: multiple cows</span>
+            <small>Flag this occurrence without deleting it</small>
+          </button>
+
+          <div class="update-action">
+            <label for="newIdInput">New global ID <span>1–62</span></label>
+            <div class="update-row">
+              <input
+                id="newIdInput"
+                type="number"
+                min="1"
+                max="62"
+                step="1"
+                inputmode="numeric"
+                placeholder="e.g. 10"
+                disabled
+              >
+              <button id="updateButton" class="review-button update" type="button" disabled>
+                Update ID
+              </button>
+            </div>
+            <p class="input-note">The server will save this as G0001–G0062.</p>
+          </div>
+        </div>
+
+        <p id="submitMessage" class="submit-message" role="status" aria-live="polite"></p>
+      </aside>
+    </main>
+
+    <div id="fatalError" class="fatal-error" role="alert" hidden></div>
+    <noscript>This review interface requires JavaScript.</noscript>
+  </body>
+</html>

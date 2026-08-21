@@ -1,0 +1,29 @@
+# Python runtime files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Local coding-agent metadata
+.agents/
+.codex/
+agents.md
+
+# Runtime state and logs
+logs/
+*.log
+.*_reviews.csv.lock
+*.tmp
+*.part
+
+# Restricted and manually curated assets
+*_reviews.csv
+
+# Generated data and media
+occurrence_segments.csv
+bbox_occurrence_summary.json
+cached_clips/
+corrected_export/
+backups/
+*.mp4
+*.MP4
