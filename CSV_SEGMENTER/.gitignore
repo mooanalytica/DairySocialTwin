@@ -1,0 +1,39 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Generated output and logs
+output/
+results/
+*.log
+
+# Restricted or internally staged assets
+MOVE_IT/
+data/
+datasets/
+private_assets/
+models/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.csv
+
+# Coding-agent state and instructions not intended for publication
+.agents/
+.codex/
+AGENTS.md
+agents.md
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
