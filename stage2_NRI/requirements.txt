@@ -1,0 +1,5 @@
+# Install a CUDA-enabled PyTorch build compatible with the workstation separately.
+numpy==1.26.4
+opencv-python==4.11.0.86
+pandas==2.2.3
+tqdm==4.67.1
