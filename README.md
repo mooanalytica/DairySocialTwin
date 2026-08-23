@@ -1,134 +1,57 @@
-# DairySocialTwin
+# Project Files, Code Repositories, and Reproducibility Resources
 
-## Learning Dynamic Social Structure for Decision-Aware Dairy Digital Twins
+1. The following project resources are stored in the internal Dropbox:
 
-DairySocialTwin is an open research framework for learning dynamic social structure from large-scale multi-camera dairy cattle data. The project transforms interaction episodes into temporal behavioral graphs, computational social phenotypes, latent social states, and decision-aware digital twin representations.
+   * The interaction episode dataset described in Section 1.5. The dataset contains 447 source clips at the pre-segmentation level. Of these, 400 source clips are included in the frozen experimental index and were used by the classifiers described in Section 3. The remaining 47 source clips are retained on disk but were excluded from the frozen index.
+   * The manually corrected re-identification clips listed in Table 3.
+   * The code used to run Stage 1 on the Digital Research Alliance of Canada (DRAC) cluster.
+   * Restricted farm data, trained models, full configuration files, and processed results that are not included in the public GitHub repository. This includes, for example, the manifests and model checkpoints for the NRI-style Latent Edge Model.
 
-The long-term vision is to move beyond event detection and interaction classification toward social intelligence systems capable of understanding herd-level behavior, social organization, welfare dynamics, and management-relevant risks.
+2. The CSV Segmenter used to split excessively large `.csv` files (Section 2.2) is available at:
 
----
+   [CSV_SEGMENTER](https://github.com/mooanalytica/DairySocialTwin/tree/main/CSV_SEGMENTER)
 
-## Research Motivation
+3. The dashboard and WebUI, including the social network analysis components (Sections 2.2, 2.4, and 4.1), are available at:
 
-Most livestock monitoring systems focus on detecting individual events such as feeding, locomotion, aggression, or social interactions. However, animal welfare and behavior are also shaped by social structure, community dynamics, dominance relationships, affiliative bonds, and social isolation.
+   [DXW](https://github.com/mooanalytica/DairySocialTwin/tree/main/DXW)
 
-This project investigates how dynamic social networks emerge from large-scale behavioral observations and how those networks can be transformed into computational social phenotypes and latent social states for digital twin applications.
+4. The directed graph annotation tools (Section 1.1) are available at:
 
----
+   [Directed_Interaction](https://github.com/mooanalytica/DairySocialTwin/tree/main/Directed_Interaction)
 
-## Project Objectives
+5. The tools for creating camera-specific semantic 2D maps (Section 2.1) are available at:
 
-### Interaction Episode Extraction
-- Multi-camera dairy cattle observations
-- Pairwise interaction identification
-- Friendly and antagonistic interaction inference
-- Zone-aware and context-aware behavioral analysis
+   * [FloorPlanAnno](https://github.com/mooanalytica/DairySocialTwin/tree/main/FloorPlanAnno)
+   * [FloorPlanAnnoSR](https://github.com/mooanalytica/DairySocialTwin/tree/main/FloorPlanAnnoSR)
 
-### Temporal Behavioral Graphs
-- Dynamic social network construction
-- Friendly interaction networks
-- Antagonistic interaction networks
-- Temporal graph evolution
+6. The Interaction Annotator (Section 1.2) is available at:
 
-### Computational Social Phenotyping
-- Social centrality
-- Interaction diversity
-- Community stability
-- Antagonistic exposure
-- Isolation tendency
-- Social persistence
+   [Interaction_Annotator](https://github.com/mooanalytica/DairySocialTwin/tree/main/Interaction_Annotator)
 
-### Latent Social State Inference
-- Socially integrated
-- Socially isolated
-- Socially unstable
-- Antagonistically pressured
+7. The Quality Control tools (Section 1.3) are available at:
 
-### Decision-Aware Dairy Digital Twins
-- Social-risk monitoring
-- Welfare analytics
-- Behavioral forecasting
-- Management decision support
+   [Quality_Control](https://github.com/mooanalytica/DairySocialTwin/tree/main/Quality_Control)
 
----
+8. The Trajectory Stabilization tools (Section 1.4) are available at:
 
-## Dataset
+   [Trajectory_Stabilization](https://github.com/mooanalytica/DairySocialTwin/tree/main/Trajectory_Stabilization)
 
-Current research dataset includes:
+9. The re-identification annotation tools (Section 2.3) are available at:
 
-- 90+ hours of multi-camera video
-- 300+ dairy cattle
-- 3 commercial dairy farms
-- Multiple behavioral contexts and management zones
+   [re-identification-ANNO](https://github.com/mooanalytica/DairySocialTwin/tree/main/re-identification-ANNO)
 
----
+10. The re-identification pipeline (Section 4.2) is available at:
 
-## Repository Structure
+    [re-identification](https://github.com/mooanalytica/DairySocialTwin/tree/main/re-identification)
 
-```text
-interaction_episodes/
-temporal_behavioral_graphs/
-social_phenotypes/
-latent_state_engine/
-digital_twin/
-visualization/
-datasets/
-notebooks/
-publications/
-```
+11. The NRI-style Latent Edge Model (Section 3.6) is available at:
 
----
+    [stage2_NRI](https://github.com/mooanalytica/DairySocialTwin/tree/main/stage2_NRI)
 
-## Research Pipeline
+12. The Non-Graph Temporal Model (Section 3.4) is available at:
 
-Multi-Camera Video
+    [stage2_transformer](https://github.com/mooanalytica/DairySocialTwin/tree/main/stage2_transformer)
 
-↓
+13. The unsuccessful Vision-Language Model (VLM) approach discussed in Section 3.1 is available at:
 
-Trajectories
-
-↓
-
-Interaction Episodes
-
-↓
-
-Temporal Behavioral Graphs
-
-↓
-
-Dynamic Social Structure
-
-↓
-
-Computational Social Phenotypes
-
-↓
-
-Latent Social States
-
-↓
-
-Decision-Aware Digital Twin
-
-↓
-
-Outcome Prediction
-
----
-
-## Contributors
-
-MooAnalytica Research Group
-
-Dalhousie University
-
-Faculty of Computer Science
-
-Faculty of Agriculture
-
----
-
-## Citation
-
-If you use this repository, please cite the associated publications when available.
+    [vLLM](https://github.com/mooanalytica/DairySocialTwin/tree/main/vLLM)
